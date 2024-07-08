@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_state_sample/home.dart';
+import 'package:flutter_state_sample/todo_home.dart';
 
 final helloWorldProvider = StateProvider<String>((ref) => 'Hello world');
+
+final activityProvider = StateProvider<bool>((ref) => false);
 
 void main() {
   runApp(
@@ -19,8 +23,11 @@ class MyApp extends ConsumerWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: Text('Example')),
-        body: Center(
-          child: Text(value),
+        body: Column(
+          children: [
+            Home(),
+            TodoHome()
+          ],
         ),
       ),
     );
