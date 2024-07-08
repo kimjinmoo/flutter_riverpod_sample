@@ -7,7 +7,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'todo_provider.g.dart';
 
 @riverpod
-class TodoList extends _$TodoList {
+class TodoListNotifier extends _$TodoListNotifier {
   @override
   Future<List<Todo>> build() async {
     return [

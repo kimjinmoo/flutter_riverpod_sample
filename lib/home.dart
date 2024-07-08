@@ -16,7 +16,7 @@ class _HomeState extends ConsumerState<Home> {
   void initState() {
     super.initState();
 
-    ref.listenManual(activityProvider, (previous, next) {
+    ref.listenManual(activityProvider("test1"), (previous, next) {
       // todo
     });
   }
@@ -25,7 +25,8 @@ class _HomeState extends ConsumerState<Home> {
   Widget build(BuildContext context) {
     return Consumer(
       builder: (context, ref, child) {
-        final AsyncValue<Activity> activity = ref.watch(activityProvider);
+        final AsyncValue<Activity> activity =
+            ref.watch(activityProvider("test1"));
 
         return Center(
             child: switch (activity) {

@@ -35,7 +35,7 @@ class _TodoHomeState extends ConsumerState<TodoHome> {
                   ),
                   onPressed: () {
                     final future = ref
-                        .read(todoListProvider.notifier)
+                        .read(todoListNotifierProvider.notifier)
                         .addTodo(Todo(description: "test", completed: false));
                     setState(() {
                       _pendingAddTodo = future;
